@@ -8,7 +8,7 @@ public class Payment {
 	  private Integer id;
     private String name;
     private Double amount;
-    //private String details;
+    private String details;
     
     public Payment() {}
 
@@ -17,11 +17,11 @@ public class Payment {
         this.amount = amount;
     }
 
-    // public Payment(String name, Double amount, String details) {
-    //     this.name = name;
-    //     this.amount = amount;
-    //     this.details = details;
-    // }
+    public Payment(String name, Double amount, String details) {
+         this.name = name;
+         this.amount = amount;
+         this.details = details;
+     }
 
 	public Integer getId() {
 		return id;
@@ -48,13 +48,13 @@ public class Payment {
     }
 
     
-  // public String getDetails() {
-	// 	return details;
-	// }
+  public String getDetails() {
+		return details;
+	}
 
-	// public void setAmount(String details) {
-	// 	this.details = details;
-  // }
+	public void setDetails(String details) {
+		this.details = details;
+  }
 
   @Override
   public String toString() {
