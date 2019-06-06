@@ -38,7 +38,7 @@ class CashFrontController {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         HttpEntity<String> entity = new HttpEntity<String>(headers);
-        List<Payment> pymnts = restTemplate.exchange("http://localhost:8080/payments", HttpMethod.GET, entity, List.class).getBody();
+        List<Payment> pymnts = restTemplate.exchange("http://cash-back:8080/payments", HttpMethod.GET, entity, List.class).getBody();
         model.addAttribute("payments", pymnts);
         System.out.println("The result is ->" + pymnts);  
         return "payment";
@@ -50,7 +50,7 @@ class CashFrontController {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         HttpEntity<Payment> entity = new HttpEntity<Payment>(payment,headers);
-        restTemplate.exchange("http://localhost:8080/payment", HttpMethod.POST, entity, String.class).getBody();
+        restTemplate.exchange("http://cash-back:8080/payment", HttpMethod.POST, entity, String.class).getBody();
         return initCash(model);
     }
 }
